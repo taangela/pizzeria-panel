@@ -1,10 +1,22 @@
 import React from 'react';
 import styles from './Login.module.scss';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
 
 const Login = () => {
   return (
     <div className={styles.component}>
-      <h2>Login view</h2>
+      <form className={styles.component}>
+        <TextField className={styles.textField} id="standard-basic" label="Login" />
+        <TextField className={styles.textField}
+          id="standard-password-input"
+          label="Password"
+          type="password"
+          autoComplete="current-password"
+        />
+        <Button className={styles.button} variant="outlined">Log in</Button>
+      </form>
     </div>
   );
 };
