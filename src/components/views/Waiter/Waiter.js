@@ -7,8 +7,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 
 const demoContent = [
@@ -54,10 +52,8 @@ const renderActions = status => {
   }
 };
 
-const Waiter = ({id}) => (
+const Waiter = () => (
   <Paper className={styles.component}>
-    <Link to={`${process.env.PUBLIC_URL}/waiter/order/new`}>New order</Link>
-    <Link to={`${process.env.PUBLIC_URL}/waiter/order/${id}`}>Order ID</Link>
     <Table>
       <TableHead>
         <TableRow>
@@ -92,9 +88,5 @@ const Waiter = ({id}) => (
     </Table>
   </Paper>
 );
-
-Waiter.propTypes = {
-  id: PropTypes.string,
-};
 
 export default Waiter;
