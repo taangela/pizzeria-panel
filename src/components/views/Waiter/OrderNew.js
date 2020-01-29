@@ -35,7 +35,7 @@ const OrderNew = () => {
             <Paper>
               <Typography variant="h5">Value</Typography>
               <Divider />
-              <Typography variant="h3">123$</Typography>
+              <Typography variant="h3">89$</Typography>
             </Paper>
           </Grid>
         </Grid>

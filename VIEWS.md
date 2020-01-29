@@ -2,9 +2,9 @@
 
     - '/'
         -statystyki dzisejszych zamówień (zdalne i lokalne)
-        -lista rezerwacji i eventów zaplanowanych na dzisaj
+        -lista rezerwacji i eventów zaplanowanych na dzisaj DONE
 
-# Logowanie
+# Logowanie DONE
 
     - '/login'
         -pola na login i hasło
@@ -29,23 +29,23 @@
     - 'tables/events/new'
          -analogicznie do powyżej, dla eventów,  bez poczatkowych informacji
 
-# Widok kelnera
+# Widok kelnera 
 
-    - '/waiter'
+    - '/waiter' DONE
         -tabela
             -w wierszach wyświetla stoliki
             -wkolumnach różne informacje (status, czas od ostatniej aktywności)
             -w ostatniej kolumnie dostępne akcje dla danego stolika
-    - '/waiter/order/new'
+    - '/waiter/order/new' DONE
         -numer stolika(edytowalny)
         -menu produktów
         -opcje wybranego produktu
         -zamówienie (zamówione produkty z opcjami i ceną)
         -kwotę zamówienia
-    - '/waiter/order/:id'
+    - '/waiter/order/:id' DONE
         -jak powyższa
 
-# Widok kuchni
+# Widok kuchni DONE
     - '/kitchen'
         -wyświetlać listę zamówień w kolejności ich złożenia
         -lista musi zawierać: 
