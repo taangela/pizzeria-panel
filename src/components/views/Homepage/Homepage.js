@@ -8,10 +8,6 @@ import Table from '@material-ui/core/Table';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
-
-
-import Typography from '@material-ui/core/Typography';
-
 import styles from './Homepage.module.scss';
 
 const bookings = [
@@ -52,11 +48,11 @@ const orders =[
 const Homepage = () => (
   <Container >
     <Grid container spacing={5} className={styles.component}>
-      <Grid item xs={4} spacing={2}>
+      <Grid item xs={4}>
         <Paper>
+          <h3>Orders</h3>
           <Table>
             <TableHead> 
-              <Typography variant="subtilte1">Orders</Typography>
               <TableRow>
                 <TableCell>Place</TableCell>
                 <TableCell>Number</TableCell>
@@ -77,11 +73,11 @@ const Homepage = () => (
           </Table>    
         </Paper>
       </Grid>
-      <Grid item xs={4} spacing={2}>
+      <Grid item xs={4}>
         <Paper>
+          <h3>Waiter</h3>
           <Table>
             <TableHead> 
-              <Typography variant="subtilte1">Waiters</Typography>
               <TableRow>
                 <TableCell>Status</TableCell>
                 <TableCell>Number</TableCell>
@@ -102,11 +98,11 @@ const Homepage = () => (
           </Table>    
         </Paper>
       </Grid>
-      <Grid item xs={4} spacing={2}>
+      <Grid item xs={4}>
         <Paper>
+          <h3>Kitchen</h3>
           <Table>
             <TableHead> 
-              <Typography variant="subtilte1">Kitchen</Typography>
               <TableRow>
                 <TableCell>Status</TableCell>
                 <TableCell>Number</TableCell>
@@ -129,9 +125,9 @@ const Homepage = () => (
       </Grid>
     </Grid>
     <Paper className={styles.component}>
+      <h3>Bookings</h3>
       <Table>
         <TableHead> 
-          <Typography variant="subtilte1">Bookings</Typography>
           <TableRow>
             <TableCell>Hour</TableCell>
             <TableCell>Table</TableCell>
@@ -160,9 +156,9 @@ const Homepage = () => (
       </Table>
     </Paper>
     <Paper className={styles.component}>
+      <h3>Events</h3>
       <Table>
         <TableHead>
-          <Typography variant="subtilte2">Events</Typography>
           <TableRow>
             <TableCell>Hour</TableCell>
             <TableCell>Table</TableCell>

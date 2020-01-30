@@ -18,20 +18,26 @@ const menu = [
   {id: 3, dish: 'salad', options: ['Cucumber', 'Cheese', 'Fresh herbs', 'Black pepper', 'Olives']},
 ];
 
+const order = [
+  {id: 1, dish: 'breakfast', options: ['Cappuccino', 'Espresso']},
+  {id: 2, dish: 'pizza', options: ['Olives', 'Salami']},
+  {id: 3, dish: 'salad', options: ['Fresh herbs', 'Black pepper', 'Olives']},
+];
+
 const OrderNew = () => {
   return (
     <Container>
       <Paper className={styles.component}>
         <h2>New order</h2>
         <Grid container spacing={5}>
-          <Grid item xs={6} lg={4} spacing={2}>
+          <Grid item xs={6} lg={4}>
             <Paper>
               <Typography variant="h5">Table</Typography>
               <Divider />
               <TextField id="outlined-basic" label='1' variant="outlined" />
             </Paper>
           </Grid>
-          <Grid item xs={6} lg={4} spacing={2}>
+          <Grid item xs={6} lg={4}>
             <Paper>
               <Typography variant="h5">Value</Typography>
               <Divider />
@@ -66,7 +72,7 @@ const OrderNew = () => {
               <Divider />
               <Table>
                 <TableBody>
-                  {menu.map(row => (
+                  {order.map(row => (
                     <TableRow key={row.id} className={styles.tableRow}>
                       <TableCell><Typography variant="h6">{row.dish}</Typography></TableCell>
                       {row.options.map(option => (
