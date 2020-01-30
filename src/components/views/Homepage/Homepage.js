@@ -5,6 +5,11 @@ import TableBody from '@material-ui/core/TableBody';
 import TableHead from '@material-ui/core/TableHead';
 import TableCell from '@material-ui/core/TableCell';
 import Table from '@material-ui/core/Table';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+
+
+
 import Typography from '@material-ui/core/Typography';
 
 import styles from './Homepage.module.scss';
@@ -21,8 +26,108 @@ const events = [
   {id: 3, hour: '20:00', table: 3, peopleNumber: 6, starter: ['water']},
 ];
 
+const waiter = [
+  {status: 'free', number: 20},
+  {status: 'thinking', number: 3},
+  {status: 'ordered', number: 2},
+  {status: 'prepared', number: 2},
+  {status: 'delivered', number: 5},
+  {status: 'paid', number: 3},
+];
+
+const kitchen = [
+  {status: 'done', number: 20},
+  {status: 'during preparation', number: 2},
+  {status: 'readty to go', number: 5},
+  {status: 'ordered', number: 2},
+];
+
+const orders =[
+  {place: 'lokal', number: 10},
+  {place: 'with delivery', number: 15},
+];
+
+
+
 const Homepage = () => (
-  <div>
+  <Container >
+    <Grid container spacing={5} className={styles.component}>
+      <Grid item xs={4} spacing={2}>
+        <Paper>
+          <Table>
+            <TableHead> 
+              <Typography variant="subtilte1">Orders</Typography>
+              <TableRow>
+                <TableCell>Place</TableCell>
+                <TableCell>Number</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {orders.map(row => (
+                <TableRow key={row.place}>
+                  <TableCell component="th" scope="row">
+                    {row.place}
+                  </TableCell>
+                  <TableCell>
+                    {row.number}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody> 
+          </Table>    
+        </Paper>
+      </Grid>
+      <Grid item xs={4} spacing={2}>
+        <Paper>
+          <Table>
+            <TableHead> 
+              <Typography variant="subtilte1">Waiters</Typography>
+              <TableRow>
+                <TableCell>Status</TableCell>
+                <TableCell>Number</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {waiter.map(row => (
+                <TableRow key={row.status}>
+                  <TableCell component="th" scope="row">
+                    {row.status}
+                  </TableCell>
+                  <TableCell>
+                    {row.number}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody> 
+          </Table>    
+        </Paper>
+      </Grid>
+      <Grid item xs={4} spacing={2}>
+        <Paper>
+          <Table>
+            <TableHead> 
+              <Typography variant="subtilte1">Kitchen</Typography>
+              <TableRow>
+                <TableCell>Status</TableCell>
+                <TableCell>Number</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {kitchen.map(row => (
+                <TableRow key={row.status}>
+                  <TableCell component="th" scope="row">
+                    {row.status}
+                  </TableCell>
+                  <TableCell>
+                    {row.number}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody> 
+          </Table>    
+        </Paper>
+      </Grid>
+    </Grid>
     <Paper className={styles.component}>
       <Table>
         <TableHead> 
@@ -85,7 +190,7 @@ const Homepage = () => (
         </TableBody>
       </Table>
     </Paper>
-  </div>
+  </Container>
 );
 
 export default Homepage;

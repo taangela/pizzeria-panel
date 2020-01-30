@@ -29,7 +29,7 @@
     - 'tables/events/new'
          -analogicznie do powyżej, dla eventów,  bez poczatkowych informacji
 
-# Widok kelnera 
+# Widok kelnera DONE
 
     - '/waiter' DONE
         -tabela
