@@ -1,4 +1,4 @@
-# Dashboard
+# Dashboard DONE
 
     - '/'
         -statystyki dzisejszych zamówień (zdalne i lokalne)

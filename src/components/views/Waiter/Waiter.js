@@ -25,13 +25,13 @@ const renderActions = status => {
     case 'free':
       return (
         <>
+          <Button variant="contained" color="primary" component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
           <Button>thinking</Button>
-          <Button component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
         </>
       );
     case 'thinking':
       return (
-        <Button component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
+        <Button variant="contained" color="primary" component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
       );
     case 'ordered':
       return (
@@ -76,7 +76,7 @@ const Waiter = () => (
             </TableCell>
             <TableCell>
               {row.order && (
-                <Button component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>{row.order}</Button>
+                <Button variant="contained" color="primary"component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>{row.order}</Button>
               )}
             </TableCell>
             <TableCell>
