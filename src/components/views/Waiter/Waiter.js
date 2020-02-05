@@ -34,12 +34,12 @@ class Waiter extends React.Component {
         return (
           <>
             <Button className={styles.button} onClick={() => updateStatus(orderId, 'thinking')} color="secondary" variant="contained">thinking</Button>
-            <Button className={styles.button} variant="contained" color="primary" component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
+            <Button className={styles.button} onClick={() => updateStatus(orderId, 'ordered')} color="secondary" variant="contained">new order</Button>
           </>
         );
       case 'thinking':
         return (
-          <Button className={styles.button} variant="contained" color="primary" component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
+          <Button className={styles.button} onClick={() => updateStatus(orderId, 'ordered')} color="secondary" variant="contained">new order</Button>
         );
       case 'ordered':
         return (
@@ -109,6 +109,7 @@ class Waiter extends React.Component {
                   </TableCell>
                 </TableRow>
               ))}
+              <Button className={styles.icon} variant="contained" color="primary" component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
             </TableBody>
           </Table>
         </Paper>

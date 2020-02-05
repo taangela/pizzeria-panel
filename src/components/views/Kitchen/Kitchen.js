@@ -18,7 +18,6 @@ const demoContent = [
   {id: '5', status: 'ready to go',tableNumber: '3',order: ['breakfast, ','tea']},
   {id: '6', status: 'ready to go', orderNumber: '10a',order: ['pizza, ','water']},
   {id: '7', status: 'done', orderNumber: '12a',order: null},
-  ,
 ];
 
 const renderActions = status => {
