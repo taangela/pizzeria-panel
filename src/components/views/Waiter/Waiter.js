@@ -19,6 +19,7 @@ class Waiter extends React.Component {
       error: PropTypes.oneOfType([PropTypes.bool,PropTypes.string]),
     }),
     tables: PropTypes.array,
+    updateStatus: PropTypes.func,
   }
 
   componentDidMount(){
@@ -26,33 +27,35 @@ class Waiter extends React.Component {
     fetchTables();
   }
 
-  renderActions(status){
+  renderActions(orderId, status){
+    const { updateStatus} = this.props;
     switch (status) {
       case 'free':
         return (
           <>
-            <Button>thinking</Button>
-            <Button variant="contained" color="primary" component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
+            <Button className={styles.button} onClick={() => updateStatus(orderId, 'thinking')} color="secondary" variant="contained">thinking</Button>
+            <Button className={styles.button} variant="contained" color="primary" component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
           </>
         );
       case 'thinking':
         return (
-          <Button variant="contained" color="primary" component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>        );
+          <Button className={styles.button} variant="contained" color="primary" component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
+        );
       case 'ordered':
         return (
-          <Button>prepared</Button>
+          <Button className={styles.button} onClick={() => updateStatus(orderId, 'prepared')} color="secondary" variant="contained">prepared</Button>
         );
       case 'prepared':
         return (
-          <Button>delivered</Button>
+          <Button className={styles.button} onClick={() => updateStatus(orderId, 'delivered')} color="secondary" variant="contained">delivered</Button>
         );
       case 'delivered':
         return (
-          <Button>paid</Button>
+          <Button className={styles.button} onClick={() => updateStatus(orderId, 'paid')} color="secondary" variant="contained">paid</Button>
         );
       case 'paid':
         return (
-          <Button>free</Button>
+          <Button className={styles.button} onClick={() => updateStatus(orderId, 'free')} variant="contained" color="secondary">free</Button>
         );
       default:
         return null;
@@ -98,11 +101,11 @@ class Waiter extends React.Component {
                   </TableCell>
                   <TableCell>
                     {row.order && (    
-                      <Button variant="contained" color="primary"component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>{row.order}</Button>
+                      <Button className={styles.button} vriant="contained" color="primary"component ={Link} to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>{row.order}</Button>
                     )}
                   </TableCell>
                   <TableCell>
-                    {this.renderActions(row.status)}
+                    {this.renderActions(row.id, row.status)}
                   </TableCell>
                 </TableRow>
               ))}
